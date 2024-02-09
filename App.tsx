@@ -9,33 +9,12 @@ import {
   View,
 } from 'react-native';
 
-import {
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  return (
-    <View className="mt-8 px-2">
-      <Text className="text-2xl text-black dark:text-white">
-        {title}
-      </Text>
-      <Text className="mt-2 text-lg text-black dark:text-white">
-        {children}
-      </Text>
-    </View>
-  );
-}
-
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
-
   const backgroundStyle = "bg-neutral-300 dark:bg-slate-900"
 
   return (
@@ -46,23 +25,33 @@ function App(): React.JSX.Element {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         className={backgroundStyle}>
-        <Header />
-        <View className="bg-white dark:bg-black">
-          <Section title="Step One">
-            Edit <Text className="font-bold">App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+        <View className="flex-1 bg-white">
+      {/* Header */}
+      <View className="p-4 bg-black">
+        <Text className="text-white text-lg font-bold">Joe's App</Text>
+      </View>
+      
+      {/* Horizontal Scroll of Cards */}
+      <ScrollView horizontal={true} className="mt-4 px-4">
+        {/* Card 1 */}
+        <View className="bg-gray-200 w-64 mr-4 p-4 rounded-lg">
+          <Text className="text-lg font-bold mb-2">Card 1 Title</Text>
+          <Text className="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
         </View>
+        
+        {/* Card 2 */}
+        <View className="bg-gray-200 w-64 mr-4 p-4 rounded-lg">
+          <Text className="text-lg font-bold mb-2">Card 2 Title</Text>
+          <Text className="text-gray-700">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+        </View>
+        
+        {/* Card 3 */}
+        <View className="bg-gray-200 w-64 mr-4 p-4 rounded-lg">
+          <Text className="text-lg font-bold mb-2">Card 3 Title</Text>
+          <Text className="text-gray-700">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
+        </View>
+      </ScrollView>
+    </View>
       </ScrollView>
     </SafeAreaView>
   );
