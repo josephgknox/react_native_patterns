@@ -15,9 +15,9 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ title, description }) => {
   return (
     <StyledView className="bg-gray-200 w-64 mr-4 p-4 rounded-lg">
-        <StyledText className="text-lg font-bold mb-2">{title}</StyledText>
-        <StyledText className="text-gray-700">{description}</StyledText>
-        </StyledView>
+      <StyledText className="text-black text-lg font-bold mb-2">{title}</StyledText>
+      <StyledText className="text-black">{description}</StyledText>
+    </StyledView>
   );
 };
 

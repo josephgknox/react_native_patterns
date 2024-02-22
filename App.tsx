@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import Card from './src/components/Card';
+import IconBox from './src/components/IconBox';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -34,20 +35,28 @@ function App(): React.JSX.Element {
       </View>
       
       {/* Horizontal Scroll of Cards */}
-      <ScrollView horizontal={true} className="mt-4 px-4">
+      <ScrollView horizontal={true} className="mt-5 px-4">
       <Card 
         title="Example Card"
-        description="This is an example card component."
+        description="This is an example Card component."
       />
-            <Card 
+      <Card
         title="Example Card"
-        description="This is an example card component."
+        description="This is an example Card component."
       />
-            <Card 
+      <Card 
         title="Example Card"
-        description="This is an example card component."
+        description="This is an example Card component."
       />
       </ScrollView>
+      {/* Icon Box */}
+      <View className="mt-5 px-4">
+        <IconBox 
+          title="Example Icon Box"
+          description="This is an example Icon Box component."
+        />
+      </View>
+
     </View>
       </ScrollView>
     </SafeAreaView>
