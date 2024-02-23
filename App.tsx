@@ -1,5 +1,4 @@
 import React from 'react';
-import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -11,10 +10,6 @@ import {
 
 import Card from './src/components/Card';
 import IconBox from './src/components/IconBox';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
