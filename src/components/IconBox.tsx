@@ -12,10 +12,10 @@ interface IconBoxProps {
 
 const IconBox: React.FC<IconBoxProps> = ({ title, description }) => {
   return (
-    <View className="mb-5 mr-2">
-      <FontAwesomeIcon icon={faCoffee} size={ 32 } color={ 'indigo' } />
-        <Text className="text-black text-lg font-bold mb-2">{title}</Text>
-        <Text className="text-black">{description}</Text>
+    <View className="border-solid border-4 border-indigo-900 rounded-md p-5">
+      <FontAwesomeIcon icon={faCoffee} size={ 50 } color={ 'indigo' }/>
+      <Text className="text-black text-lg font-bold mb-1">{title}</Text>
+      <Text className="text-black">{description}</Text>
     </View>
   );
 };
