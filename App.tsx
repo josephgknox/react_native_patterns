@@ -1,5 +1,4 @@
 import React from 'react';
-import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -9,33 +8,11 @@ import {
   View,
 } from 'react-native';
 
-import {
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  return (
-    <View className="mt-8 px-2">
-      <Text className="text-2xl text-black dark:text-white">
-        {title}
-      </Text>
-      <Text className="mt-2 text-lg text-black dark:text-white">
-        {children}
-      </Text>
-    </View>
-  );
-}
+import Card from './src/components/Card';
+import IconBox from './src/components/IconBox';
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
-
   const backgroundStyle = "bg-neutral-300 dark:bg-slate-900"
 
   return (
@@ -46,23 +23,36 @@ function App(): React.JSX.Element {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         className={backgroundStyle}>
-        <Header />
-        <View className="bg-white dark:bg-black">
-          <Section title="Step One">
-            Edit <Text className="font-bold">App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
+        <View className="flex-1 bg-white">
+      {/* Header */}
+      <View className="p-4 bg-black">
+        <Text className="text-white text-lg font-bold">Joe's App</Text>
+      </View>
+      
+      {/* Horizontal Scroll of Cards */}
+      <ScrollView horizontal={true} className="mt-5 px-4">
+      <Card 
+        title="Example Card"
+        description="This is an example Card component."
+      />
+      <Card
+        title="Example Card"
+        description="This is an example Card component."
+      />
+      <Card 
+        title="Example Card"
+        description="This is an example Card component."
+      />
+      </ScrollView>
+      {/* Icon Box */}
+      <View className="mt-5 px-4">
+        <IconBox 
+          title="Example Icon Box"
+          description="This is an example Icon Box component."
+        />
+      </View>
+
+    </View>
       </ScrollView>
     </SafeAreaView>
   );
